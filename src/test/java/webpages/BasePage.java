@@ -9,14 +9,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class BasePage {
     protected static WebDriver driver;
 
-    public void setWebDriver(WebDriver driver) {
+    public void setBaseDriver(WebDriver driver) {
         BasePage.driver = driver;
     }
 
     public void startBrowser() throws MalformedURLException {
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities	);
-        setWebDriver(driver);
+        setBaseDriver(driver);
     }
 
     public void navigateToGoogle() {
